@@ -1,0 +1,15 @@
+services:
+  stable-diffusion: 
+    build: .
+    # ports:
+    #   - "8887:8888"
+    ipc: host
+    stdin_open: true
+    tty: true
+    volumes:
+      - ./:/stable-diffusion
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - capabilities: [gpu]
