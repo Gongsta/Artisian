@@ -5,6 +5,9 @@
 <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}">
 <link rel="stylesheet" href="https://rsms.me/inter/inter.css">
 <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">
+<link href="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.css" rel="stylesheet">
+<script src="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.js"></script>
+<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 </head>
 
 <!-- TODO -->
@@ -31,12 +34,6 @@
 			</div>
 			
 			<div style="flex: 30%">
-					<input type="button" value="save" size="200" onclick="save()">
-				<!-- <form>
-						<a id=generate-image-button><button class='btn btn-default'>Test</button></a>
-				</form> -->
-				<!-- <div class="gradient-button" onclick="">
-				<!-- User Prompt input box -->
 				<form>
 					<input type="text" id="prompt_box" name="prompt_box" placeholder="Description">
 				</form>
@@ -44,11 +41,11 @@
 				<button class="collapsible">Advanced Options</button>
 				<div class="content">
 					<div class="slidecontainer">
-						<p>Option 1</p>
-						<input type="range" min="1" max="100" value="50">
+						<p>Strength</p>
+						<input type="range" min="0" max="1" value="0.7" id="strength", step="0.1">
 						
-						<p>Option 2</p>
-						<input type="range" min="1" max="100" value="50" class="slider" id="myRange">
+						<p>Guidance Sacle</p>
+						<input type="range" min="7" max="9" value="7.5" class="slider" id="guidance_scale">
 					</div>
 				</div>
 				<script>
@@ -68,15 +65,29 @@
 					}
 				</script>
 				<!-- Advanced options (sliders) -->
-
-
-				<div class="gradient-button">
-					<h2 style="margin-bottom: 10px">Generate</h2>
-					<h2 style="margin-top: 0">Picture!</h2>
-				</div> -->
+				<a href="#" onclick="save();">
+					<div class="gradient-button">
+						<h2 style="margin-bottom: 10px">Generate</h2>
+						<h2 style="margin-top: 0">Picture!</h2>
+					</div>
+				</a>
 			</div>
 		</div>
 	</div>
+	<!-- Trigger/Open The Modal -->
+<button id="myBtn">Open Modal</button>
+
+<!-- The Modal -->
+<div id="myModal" class="modal">
+
+  <!-- Modal content -->
+  <div class="modal-content">
+    <span class="close">&times;</span>
+    <p>Some text in the Modal.. but it doesn't seem to work</p>
+  </div>
+
+</div>
+
 </body>
 
 <!-- <body onload="init()">

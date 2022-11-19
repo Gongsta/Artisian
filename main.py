@@ -26,6 +26,10 @@ pipe = pipe.to(device)
 @app.route("/")
 def home():
     return render_template('home.html')
+    
+@app.route('/load')
+def load():
+    return render_template('loading.html')
 
 #background process happening without any refreshing
 @app.route('/background_process_test')

@@ -29,29 +29,7 @@ function init() {
 }
 
 function color(obj) {
-		switch (obj.id) {
-				case "green":
-						x = "green";
-						break;
-				case "blue":
-						x = "blue";
-						break;
-				case "red":
-						x = "red";
-						break;
-				case "yellow":
-						x = "yellow";
-						break;
-				case "orange":
-						x = "orange";
-						break;
-				case "black":
-						x = "black";
-						break;
-				case "white":
-						x = "white";
-						break;
-		}
+		x = obj.id;
 		if (x == "white") y = 14;
 		else y = 2;
 
@@ -82,9 +60,9 @@ function save() {
 			url: "hook",
 			data:{
 				imageBase64: dataURL,
-				prompt: 'this is a prompt', document.getElementById('').value,
-				strength: 0.75,
-				guidance_scale: 7.5,
+				prompt: document.getElementById('prompt_box').value,
+				strength: document.getElementById('strength').value,
+				guidance_scale: document.getElementById('guidance_scale').value,
 			}
 		}).done(function() {
 			console.log('sent');
@@ -120,4 +98,33 @@ function findxy(res, e) {
 						draw();
 				}
 		}
+}
+
+
+
+// MODAL LOGIC
+// Get the modal
+var modal = document.getElementById("myModal");
+
+// Get the button that opens the modal
+var btn = document.getElementById("myBtn");
+
+// Get the <span> element that closes the modal
+var span = document.getElementsByClassName("close")[0];
+
+// When the user clicks on the button, open the modal
+btn.onclick = function() {
+  modal.style.display = "block";
+}
+
+// When the user clicks on <span> (x), close the modal
+span.onclick = function() {
+  modal.style.display = "none";
+}
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+  if (event.target == modal) {
+    modal.style.display = "none";
+  }
 }

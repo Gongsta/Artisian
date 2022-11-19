@@ -7,7 +7,7 @@ import torch
 device = "cuda" if torch.cuda.is_available() else "mps"
 pipe = StableDiffusionImageEmbedPipeline.from_pretrained("lambdalabs/sd-image-variations-diffusers")
 pipe = pipe.to(device)
-im = Image.open("sketch.jpg")
+im = Image.open("canvas.jpeg")
 num_samples = 4
 image = pipe(num_samples*[im], guidance_scale=3.0)
 image = image["sample"]
