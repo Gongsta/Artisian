@@ -7,24 +7,65 @@
 <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">
 </head>
 
+<!-- TODO -->
+<!-- 1. Input box  -->
+<!-- Advanced Options (slider) -->
+
 <body onload="init()">
+	
+
 	<div class="root-margin">
 		<h1>Draw something and we make it better</h1>
 		<div class="row">
 			<div style="flex: 70%">
 					<canvas id="can" width="600" height="600"></canvas>
 					<div id="tool-selection">
-						<div class="tool-circle" style="background:green;" id="green" onclick="color(this)"></div>
-						<div class="tool-circle" style="background:blue;" id="blue" onclick="color(this)"></div>
 						<div class="tool-circle" style="background:red;" id="red" onclick="color(this)"></div>
-						<div class="tool-circle" style="background:yellow;" id="yellow" onclick="color(this)"></div>
 						<div class="tool-circle" style="background:orange;" id="orange" onclick="color(this)"></div>
+						<div class="tool-circle" style="background:yellow;" id="yellow" onclick="color(this)"></div>
+						<div class="tool-circle" style="background:green; " id="green" onclick="color(this)"></div>
+						<div class="tool-circle" style="background:blue;" id="blue" onclick="color(this)"></div>
 						<div class="tool-circle" style="background:black;" id="black" onclick="color(this)"></div>
 						<div class="tool-circle" style="position:absolute;top:20%;left:43%;">Eraser</div>
 
 					</div>
 			</div>
+			
 			<div style="flex: 30%">
+				<!-- User Prompt input box -->
+				<form>
+					<input type="text" id="prompt_box" name="prompt_box" placeholder="Description">
+				</form>
+				
+				<button class="collapsible">Advanced Options</button>
+				<div class="content">
+					<div class="slidecontainer">
+						<p>Option 1</p>
+						<input type="range" min="1" max="100" value="50">
+						
+						<p>Option 2</p>
+						<input type="range" min="1" max="100" value="50" class="slider" id="myRange">
+					</div>
+				</div>
+				<script>
+					var coll = document.getElementsByClassName("collapsible");
+					var i;
+
+					for (i = 0; i < coll.length; i++) {
+						coll[i].addEventListener("click", function() {
+							this.classList.toggle("active");
+							var content = this.nextElementSibling;
+							if (content.style.maxHeight){
+							content.style.maxHeight = null;
+							} else {
+							content.style.maxHeight = content.scrollHeight + "px";
+							}
+						});
+					}
+				</script>
+				<!-- Advanced options (sliders) -->
+
+
 				<div class="gradient-button">
 					<h2 style="margin-bottom: 10px">Generate</h2>
 					<h2 style="margin-top: 0">Picture!</h2>
