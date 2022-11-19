@@ -23,7 +23,7 @@ pipe = pipe.to("mps")
 # response = requests.get(url)
 # init_image = Image.open(BytesIO(response.content)).convert("RGB")
 # init_image = init_image.resize((768, 512))
-init_image = Image.open('sketch.jpg').resize((768, 512))
+init_image = Image.open('test.jpeg').resize((768, 512))
 
 prompt = "A fantasy landscape, trending on artstation"
 # prompt = "Something weird"

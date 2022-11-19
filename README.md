@@ -7,7 +7,7 @@ pip install -r requirements.txt
 
 You need to login onto huggingface-cli.
 
-Log in using a token from huggingface.co/settings/tokens
+Log in using a token from https://www.huggingface.co/settings/tokens
 
 Get started by running `python3 main.py`
 

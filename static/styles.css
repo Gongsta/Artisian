@@ -1,0 +1,78 @@
+body {
+	font-family: Inter;
+	background-color: #131415;
+	color: #fff;
+	text-align: center;
+}
+
+h1 {
+	font-weight: bold;
+	font-size: 42px;
+}
+
+h2 {
+	font-size: 36px;
+}
+
+form {
+	display: flex;
+
+}
+
+canvas {
+	background-color: #fff;
+}
+
+.gradient-button {
+	align-items: center;
+	background: linear-gradient(135deg, #2F80ED 0%, #B2FFDA 100%);
+	border-radius: 10px;
+	padding: 20px 25px;
+	width: 180px;
+}
+
+.root-margin {
+	padding: 60px;
+	padding-top: 40px;
+	/* width: 100%; */
+	height: 100%;
+
+
+}
+
+.row {
+  display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.column {
+  flex: 50%;
+}
+
+.column-60 {
+	flex: 60%;
+}
+
+.column-40 {
+	flex: 40%;
+}
+
+.image-preview {
+	background-color: #fff;
+	position: relative;
+	width: 512px;
+	height: 512px;
+}
+
+.tool-selection {
+	display: flex;
+	flex-direction: row;
+
+}
+.tool-circle {
+	width: 20px;
+	height: 20px;
+	
+
+}
