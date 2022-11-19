@@ -23,7 +23,11 @@ pipe = pipe.to("mps")
 # response = requests.get(url)
 # init_image = Image.open(BytesIO(response.content)).convert("RGB")
 # init_image = init_image.resize((768, 512))
-init_image = Image.open('test.jpeg').resize((768, 512))
+basewidth = 512
+img = Image.open('test.jpeg')
+wpercent = (basewidth/float(img.size[0]))
+hsize = int((float(img.size[1])*float(wpercent)))
+init_image = img.resize((basewidth,hsize), Image.Resampling.LANCZOS)
 
 prompt = "A fantasy landscape, trending on artstation"
 # prompt = "Something weird"

@@ -71,15 +71,24 @@ function erase() {
 		var m = confirm("Want to clear");
 		if (m) {
 				ctx.clearRect(0, 0, w, h);
-				document.getElementById("canvasimg").style.display = "none";
 		}
 }
 
 function save() {
-		document.getElementById("canvasimg").style.border = "2px solid";
+		console.log("trying to save");
 		var dataURL = canvas.toDataURL();
-		document.getElementById("canvasimg").src = dataURL;
-		document.getElementById("canvasimg").style.display = "inline";
+		$.ajax({
+			type: "POST",
+			url: "hook",
+			data:{
+				imageBase64: dataURL,
+				prompt: 'this is a prompt', document.getElementById('').value,
+				strength: 0.75,
+				guidance_scale: 7.5,
+			}
+		}).done(function() {
+			console.log('sent');
+		});
 }
 
 function findxy(res, e) {

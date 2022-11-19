@@ -21,14 +21,17 @@
 						<div class="tool-circle" style="background:orange;" id="orange" onclick="color(this)"></div>
 						<div class="tool-circle" style="background:black;" id="black" onclick="color(this)"></div>
 						<div class="tool-circle" style="position:absolute;top:20%;left:43%;">Eraser</div>
-
 					</div>
 			</div>
 			<div style="flex: 30%">
-				<div class="gradient-button">
+					<input type="button" value="save" size="200" onclick="save()">
+				<!-- <form>
+						<a id=generate-image-button><button class='btn btn-default'>Test</button></a>
+				</form> -->
+				<!-- <div class="gradient-button" onclick="">
 					<h2 style="margin-bottom: 10px">Generate</h2>
 					<h2 style="margin-top: 0">Picture!</h2>
-				</div>
+				</div> -->
 			</div>
 		</div>
 	</div>
@@ -38,8 +41,9 @@
 	<canvas id="can" width="400" height="400" style="position:absolute;top:10%;left:10%;border:2px solid;"></canvas>
 	<div style="position:absolute;top:22%;left:45%;width:15px;height:15px;background:white;border:2px solid;" id="white" onclick="color(this)"></div>
 	<img id="canvasimg" style="position:absolute;top:10%;left:52%;" style="display:none;">
-	<input type="button" value="save" id="btn" size="30" onclick="save()" style="position:absolute;top:55%;left:10%;">
 	<input type="button" value="clear" id="clr" size="23" onclick="erase()" style="position:absolute;top:55%;left:15%;">
 </body> -->
 <script src="{{ url_for('static', filename='main.js') }}"></script>
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+
 </html>
