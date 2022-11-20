@@ -1,19 +1,22 @@
-# HackWestern
+# Artisian
+A project submitted to HackWestern 9.
 
-Getting started
+### Getting started
 ```bash
 pip install -r requirements.txt
 ```
 
-You need to login onto huggingface-cli.
+The code runs on Flask, with a backend powered by a StableDiffusion model hosted on Hugging face. All of the compute is done locally, but you still need to login onto `huggingface-cli`.
 
-Log in using a token from https://www.huggingface.co/settings/tokens
+They will ask you for a token, which you can obtain from here (after being logged in): https://www.huggingface.co/settings/tokens
 
-Get started by running `python3 main.py`
+Laucnh the Flask app by running `python3 main.py`
 
-- Frontend -> Backend (AI code) -> Database + Frontend
-
-To generate a image, run
+### Stable Diffusion
+If you just want to play around with the Stable Diffusion models, run the following commands:
 ```
-python scripts/img2img.py --prompt "A fantasy landscape, trending on artstation" --init-img image.jpg --strength 0.8
+cd backend/
+python3 main.py
 ```
+
+You can specify the path of the image inside the `main.py` file.
