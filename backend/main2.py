@@ -7,8 +7,13 @@ import torch
 device = "cuda" if torch.cuda.is_available() else "mps"
 pipe = StableDiffusionImageEmbedPipeline.from_pretrained("lambdalabs/sd-image-variations-diffusers")
 pipe = pipe.to(device)
-im = Image.open("canvas.jpeg")
-num_samples = 4
+
+img = Image.open("../static/canvas.jpeg")
+basewidth = 512
+wpercent = (basewidth/float(img.size[0]))
+hsize = int((float(img.size[1])*float(wpercent)))
+im = img.resize((basewidth,hsize), Image.Resampling.LANCZOS)
+num_samples = 10
 image = pipe(num_samples*[im], guidance_scale=3.0)
 image = image["sample"]
 base_path = Path("outputs/im2im")

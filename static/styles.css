@@ -6,8 +6,13 @@ html {
 }
 
 a {
+
 	text-decoration: none;
 	color: #fff;
+}
+a:hover {
+	cursor: pointer;
+
 }
 
 h1 {
@@ -18,6 +23,16 @@ h1 {
 
 h2 {
 	font-size: 36px;
+}
+ 
+.generated-h3 {
+	font-family: syne;
+	font-size: 28px;
+}
+
+.generated-p {
+	font-family: Inter;
+	font-size: 18px;
 }
 
 form {
@@ -38,6 +53,10 @@ input {
 	height: 100px;
 }
 
+input:focus {
+	outline-color: white;
+}
+
 ::placeholder {
 	color: white;
 	opacity: 1; /* Firefox */
@@ -50,7 +69,8 @@ input {
 	margin-right: auto;
 	height: 40px;
 	border: 2px solid white;
-	background-color: transparent;
+	/* background-color: transparent; */
+	background-color: rgba(255, 255, 255, 0.339);
 	border-radius: 0.2cm;
 	margin-top: 30px;
 	margin-bottom: 25px;
@@ -217,11 +237,11 @@ input {
 
 /* Modal Content/Box */
 .modal-content {
-  background-color: #fefefe;
+  background-color: transparent;
   margin: 15% auto; /* 15% from the top and centered */
   padding: 20px;
-  border: 1px solid #888;
-  width: 80%; /* Could be more or less, depending on screen size */
+	text-align: center; 
+	width: 9%;
 }
 
 /* The Close Button */
@@ -254,30 +274,16 @@ input {
 	cursor: pointer;
 }
 
-/* .loader {
-  border: 16px solid #f3f3f3;
-  border-top: 16px solid #3498db; 
+.loader {
+  border: 16px solid #f3f3f3; /* Light grey */
+  border-top: 16px solid #3498db; /* Blue */
   border-radius: 50%;
   width: 120px;
   height: 120px;
   animation: spin 2s linear infinite;
 }
 
-.w3-grey {
-  animation: progressbar 5s linear infinite;
-}
-@keyframes progressbar {
-  0% { width: 0%; }
-  100% { width: 100%; }
-  
-}
-
 @keyframes spin {
   0% { transform: rotate(0deg); }
   100% { transform: rotate(360deg); }
-}
-
-@keyframes spin {
-  0% { transform: rotate(0deg); }
-  100% { transform: rotate(360deg); }
-} */
+}		
