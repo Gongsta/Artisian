@@ -24,7 +24,6 @@ pipe = StableDiffusionImg2ImgPipeline.from_pretrained(
 pipe = pipe.to(device)
 
 
-counter = 0
 @app.route("/")
 def home():
     return render_template('home.html')
@@ -33,9 +32,9 @@ def home():
 def load():
     return render_template('loading.html')
 
-@app.route('/update_image', methods=['POST'])
-def update_image():
-    counter += 1
+@app.route('/new_image')
+def new_image():
+    return render_template('new_image.html')
 
 
 #background process happening without any refreshing
@@ -75,4 +74,4 @@ def generate_image_with_prompt(prompt, strength=0.75, guidance_scale=7.5):
     images[0].save("static/generated.png")
 
 if __name__ == "__main__":
-    app.run(host="0.0.0.0", debug=True, port=5001)
+    app.run(host="0.0.0.0", debug=True, port=5002)
