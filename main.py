@@ -7,6 +7,7 @@ import io
 import json
 import torch
 from PIL import Image
+import os
 
 from diffusers import StableDiffusionImg2ImgPipeline
 app = Flask(__name__)
@@ -25,11 +26,15 @@ pipe = pipe.to(device)
 
 @app.route("/")
 def home():
-    return render_template('home.html')
+    ai_image = os.path.join('.', 'generated.png')
+
+    return render_template('home.html', ai_image=ai_image)
     
 @app.route('/load')
 def load():
     return render_template('loading.html')
+
+
 
 #background process happening without any refreshing
 @app.route('/background_process_test')
