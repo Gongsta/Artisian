@@ -2,7 +2,7 @@ services:
   stable-diffusion: 
     build: .
     ports:
-      - "5002:5002"
+      - "5002:5003"
     ipc: host
     stdin_open: true
     tty: true
