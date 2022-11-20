@@ -3,7 +3,8 @@
 
 <head>
 <title>INSERT_NAME</title>
-<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}">
+<!-- TODO 1: CHANGE THIS TO a relative path!!! -->
+<link rel="stylesheet" href="/Users/sungjinhong/Desktop/HackWestern-3/static/styles.css">
 <link rel="stylesheet" href="https://rsms.me/inter/inter.css">
 <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">
 <link href="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.css" rel="stylesheet">
@@ -33,8 +34,8 @@
 					<div class="tool-circle" style="background:blue;" id="blue" onclick="color(this)"></div>
 					<div class="tool-circle" style="background: purple;" id="purple" onclick="color(this)"></div>
 					<div class="tool-circle" style="background:black;" id="black" onclick="color(this)"></div>
-					<div class="tool-circle" style="background: white;" onclick="color(this)"></div>
-					<p>Eraser</p>
+					<!-- TODO 3: Change to Relative path -->
+					<img id="white" style="width: 10%;" class="tool-circle " onclick="color(this)" src="/Users/sungjinhong/Desktop/HackWestern-3/static/eraser.png">
 					
 
 				</div>
@@ -43,7 +44,7 @@
 					<input type="text" class="prompt_box" id="prompt_box" name="prompt_box" placeholder="Description">
 				</form>
 
-				<button class="collapsible">Advanced Options</button>
+				<!-- <button class="collapsible">Advanced Options</button>
 				<div class="content">
 					<div class="slidecontainer">
 						<p>Strength</p>
@@ -52,14 +53,14 @@
 						<p>Guidance Sacle</p>
 						<input type="range" min="7" max="9" value="7.5" class="slider" id="guidance_scale">
 					</div>
-				</div>
+				</div> -->
 				<!-- Advanced options (sliders) -->
-				<a href="#" onclick="save();">
+				<!-- <a href="#" onclick="save();">
 					<div class="gradient-button">
 						<h2 style="margin-bottom: 10px">Generate</h2>
 						<h2 style="margin-top: 0">Picture!</h2>
 					</div>
-				</a>
+				</a> -->
 			</div>
 
 
@@ -87,7 +88,9 @@
 	<img id="canvasimg" style="position:absolute;top:10%;left:52%;" style="display:none;">
 	<input type="button" value="clear" id="clr" size="23" onclick="erase()" style="position:absolute;top:55%;left:15%;">
 </body> -->
-<script src="{{ url_for('static', filename='main.js') }}"></script>
+
+<!-- TODO 2: CHANGE THIS TO a relative path!!! -->
+<script src="/Users/sungjinhong/Desktop/HackWestern-3/static/main.js"></script>
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
 
 </html>

@@ -3,11 +3,12 @@ body {
 	background-color: #131415;
 	color: #fff;
 	text-align: center;
-	background-image: url('back_image2.png');
+	background-image: url('back3.jpeg');
 }
 
 h1 {
 	font-weight: bold;
+	
 	font-size: 42px;
 }
 
@@ -22,13 +23,7 @@ form {
 
 canvas {
 	background-color: #fff;
-	display: block;
-	margin-left: auto;
-	margin-right: auto;
-	width: 50%;
-	height: 500px;
 	border-radius: 0.4cm;
-	position: relative;
 }
 
 input {
@@ -62,8 +57,8 @@ input {
 	border: 1px solid #000000;
 	border-radius: 10px;
 	position: absolute;
-	right: 100px;
-	bottom: 350px;
+	right: 250px;
+	bottom: 400px;
 	width: 170px;
 	height: 200px;
 }
@@ -190,7 +185,8 @@ input {
 	border-radius: 0.1cm;
 	padding: 10px;
 	display: inline-block;
-	vertical-align: middle
+	vertical-align: middle;
+	margin-top: 15px;
 }
 /* The Modal (background) */
 .modal {
@@ -240,4 +236,9 @@ input {
 	margin-right: auto;
 	width: 10%;
 	height: 20%;
+}
+
+.eraser {
+	width: 30px;
+	
 }
