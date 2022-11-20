@@ -1,9 +1,7 @@
 html {
 	font-family: Inter;
-	/* background-color: #131415; */
 	color: #fff;
 	text-align: center;
-	/* background-image: url('back3.jpeg'); */
 	background-image: linear-gradient(135deg, #ff0066, #fd7e7e);
 }
 
@@ -147,7 +145,7 @@ input {
 	display: block;
 	margin-left: auto;
 	margin-right: auto;
-	width: 10%;
+	width: 13%;
 	height: 10%;
 }
 
@@ -256,9 +254,9 @@ input {
 	cursor: pointer;
 }
 
-.loader {
-  border: 16px solid #f3f3f3; /* Light grey */
-  border-top: 16px solid #3498db; /* Blue */
+/* .loader {
+  border: 16px solid #f3f3f3;
+  border-top: 16px solid #3498db; 
   border-radius: 50%;
   width: 120px;
   height: 120px;
@@ -282,4 +280,4 @@ input {
 @keyframes spin {
   0% { transform: rotate(0deg); }
   100% { transform: rotate(360deg); }
-}
+} */
