@@ -77,8 +77,10 @@ function save() {
 			data:{
 				imageBase64: dataURL,
 				prompt: document.getElementById('prompt_box').value,
-				strength: document.getElementById('strength').value,
-				guidance_scale: document.getElementById('guidance_scale').value,
+				strength: 0.75,
+				guidance_scale: 7.5,
+				// strength: document.getElementById('strength').value,
+				// guidance_scale: document.getElementById('guidance_scale').value,
 			}
 		}).done(function() {
 			console.log('sent');
