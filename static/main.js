@@ -68,6 +68,8 @@ function erase() {
 
 function save() {
 		console.log("trying to save");
+  	modal.style.display = "block";
+		modal.appendChild(document.getElementById('modal-content-id'))
 		var dataURL = canvas.toDataURL();
 		$.ajax({
 			type: "POST",
@@ -81,10 +83,8 @@ function save() {
 				// guidance_scale: document.getElementById('guidance_scale').value,
 			}
 		}).done(function() {
-			console.log('sent');
 			window.open("/new_image");
-
-  		// modal.style.display = "block";
+  		modal.style.display = "none";
 		});
 }
 

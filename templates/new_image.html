@@ -1,9 +1,20 @@
 <html>
+	<head>
+	<link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+	<link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@1,700&family=Syne:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="https://rsms.me/inter/inter.css">
+	</head>
 	<body>
-		<div style="text-align: center;">
+		<div style="text-align: center; margin-top: 200px">
+			<h3 class="generated-h3">Your Image has been generated!</h3>
 			<img src="{{url_for('static', filename='generated.png')}}">
+			<p class="generated-p">Not happy with the result? <a href="#" onclick="regenerate()" style="text-decoration: underline">Generate Again</a></p>
 		</div>
-		
 
 	</body>
+	<script>
+		function regenerate() {
+			window.close();
+		}
+	</script>
 </html>

@@ -2,7 +2,7 @@
 <html>
 
 <head>
-<title>INSERT_NAME</title>
+<title>Artisian</title>
 <!-- TODO 1: CHANGE THIS TO a relative path!!! -->
 <!-- <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css"> -->
 <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
@@ -91,9 +91,8 @@
 
 <!-- The Modal -->
 <div id="myModal" class="modal">
-  <div class="modal-content">
-		<img src="{{url_for('static', filename='generated.png')}}">
-    <span class="close">&times;</span>
+  <div class="modal-content" id="modal-content-id">
+		<div class="loader"></div>
   </div>
 
 </div>

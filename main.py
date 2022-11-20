@@ -28,10 +28,6 @@ pipe = pipe.to(device)
 def home():
     return render_template('home.html')
     
-@app.route('/load')
-def load():
-    return render_template('loading.html')
-
 @app.route('/new_image')
 def new_image():
     return render_template('new_image.html')
