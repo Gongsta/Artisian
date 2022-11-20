@@ -24,16 +24,18 @@ pipe = StableDiffusionImg2ImgPipeline.from_pretrained(
 pipe = pipe.to(device)
 
 
+counter = 0
 @app.route("/")
 def home():
-    ai_image = os.path.join('.', 'generated.png')
-
-    return render_template('home.html', ai_image=ai_image)
+    return render_template('home.html')
     
 @app.route('/load')
 def load():
     return render_template('loading.html')
 
+@app.route('/update_image', methods=['POST'])
+def update_image():
+    counter += 1
 
 
 #background process happening without any refreshing
@@ -51,7 +53,7 @@ def get_image():
 
     new_image = Image.new("RGBA", image_PIL.size, "WHITE") # Create a white rgba background
     new_image.paste(image_PIL, (0, 0), image_PIL)              # Paste the image on the background. Go to the links given below for details.
-    new_image.convert('RGB').save('temp/canvas.jpeg', "JPEG") 
+    new_image.convert('RGB').save('static/canvas.jpeg', "JPEG") 
     prompt = request.form['prompt']
     strength = float(request.form['strength'])
     guidance_scale = float(request.form['guidance_scale'])
@@ -62,7 +64,7 @@ def get_image():
 
 def generate_image_with_prompt(prompt, strength=0.75, guidance_scale=7.5):
     basewidth = 512
-    img = Image.open('temp/canvas.jpeg')
+    img = Image.open('static/canvas.jpeg')
     wpercent = (basewidth/float(img.size[0]))
     hsize = int((float(img.size[1])*float(wpercent)))
     init_image = img.resize((basewidth,hsize), Image.Resampling.LANCZOS)
@@ -70,7 +72,7 @@ def generate_image_with_prompt(prompt, strength=0.75, guidance_scale=7.5):
     images = pipe(prompt=prompt, init_image=init_image, strength=strength, guidance_scale=guidance_scale).images
     print(len(images))
 
-    images[0].save("temp/generated.png")
+    images[0].save("static/generated.png")
 
 if __name__ == "__main__":
     app.run(host="0.0.0.0", debug=True, port=5001)
