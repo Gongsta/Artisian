@@ -84,7 +84,9 @@ function save() {
 			}
 		}).done(function() {
 			console.log('sent');
-  		modal.style.display = "block";
+			window.open("/new_image");
+
+  		// modal.style.display = "block";
 		});
 }
 
