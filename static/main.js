@@ -62,10 +62,7 @@ function draw() {
 }
 
 function erase() {
-		var m = confirm("Want to clear");
-		if (m) {
-				ctx.clearRect(0, 0, w, h);
-		}
+	ctx.clearRect(0, 0, w, h);
 }
 
 function save() {
@@ -130,6 +127,13 @@ var btn = document.getElementById("myBtn");
 
 // Get the <span> element that closes the modal
 var span = document.getElementsByClassName("close")[0];
+
+var clear = document.getElementById("clear");
+
+//when the user clicks clear button
+clear.addEventListener("click", () => {
+	erase();
+})
 
 // When the user clicks on the button, open the modal
 btn.onclick = function() {
