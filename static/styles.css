@@ -201,6 +201,7 @@ input {
 	display: inline-block;
 	vertical-align: middle;
 	margin-top: 15px;
+	cursor: pointer;
 }
 /* The Modal (background) */
 .modal {
@@ -252,6 +253,7 @@ input {
 .clear {
 	color: black;
 	font-weight: 500;
+	cursor: pointer;
 }
 
 .loader {
