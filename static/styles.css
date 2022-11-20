@@ -63,10 +63,10 @@ input {
 	border: 1px solid #000000;
 	border-radius: 10px;
 	position: absolute;
-	right: 400px;
-	bottom: 450px;
+	right: 420px;
+	bottom: 380px;
 	width: 170px;
-	height: 200px;
+	height: 220px;
 }
 
 .slidecontainer {
@@ -201,6 +201,7 @@ input {
 	margin-top: 15px;
 	cursor: pointer;
 }
+
 /* The Modal (background) */
 .modal {
   display: none; /* Hidden by default */
@@ -252,6 +253,23 @@ input {
 	color: black;
 	font-weight: 500;
 	cursor: pointer;
+	vertical-align: middle;
+	display: inline-block;
+
+}
+
+.thickness {
+	cursor: pointer;
+	vertical-align: middle;
+	display: inline-block;
+	height: 12px;
+	width: 12px;
+	display: inline-block;
+	vertical-align: middle;
+	margin-top: 15px;
+	cursor: pointer;
+	margin-left: 5px;
+	margin-right: 5px;
 }
 
 /* .loader {

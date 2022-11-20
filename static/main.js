@@ -23,6 +23,7 @@ for (i = 0; i < coll.length; i++) {
 		}
 	});
 }
+let thickness = 1
 
 function init() {
 		canvas = document.getElementById('can');
@@ -31,16 +32,16 @@ function init() {
 		h = canvas.height;
 
 		canvas.addEventListener("mousemove", function (e) {
-				findxy('move', e)
+				findxy('move', e, thickness)
 		}, false);
 		canvas.addEventListener("mousedown", function (e) {
-				findxy('down', e)
+				findxy('down', e, thickness)
 		}, false);
 		canvas.addEventListener("mouseup", function (e) {
-				findxy('up', e)
+				findxy('up', e, thickness)
 		}, false);
 		canvas.addEventListener("mouseout", function (e) {
-				findxy('out', e)
+				findxy('out', e, thickness)
 		}, false);
 }
 
@@ -51,12 +52,12 @@ function color(obj) {
 
 }
 
-function draw() {
+function draw(thickness) {
 		ctx.beginPath();
 		ctx.moveTo(prevX, prevY);
 		ctx.lineTo(currX, currY);
 		ctx.strokeStyle = x;
-		ctx.lineWidth = y;
+		ctx.lineWidth = y * thickness;
 		ctx.stroke();
 		ctx.closePath();
 }
@@ -87,7 +88,7 @@ function save() {
 		});
 }
 
-function findxy(res, e) {
+function findxy(res, e, thickness) {
 		if (res == 'down') {
 				prevX = currX;
 				prevY = currY;
@@ -97,6 +98,7 @@ function findxy(res, e) {
 				flag = true;
 				dot_flag = true;
 				if (dot_flag) {
+						console.log('test')
 						ctx.beginPath();
 						ctx.fillStyle = x;
 						ctx.fillRect(currX, currY, 2, 2);
@@ -113,7 +115,7 @@ function findxy(res, e) {
 						prevY = currY;
 						currX = e.clientX - canvas.offsetLeft;
 						currY = e.clientY - canvas.offsetTop;
-						draw();
+						draw(thickness);
 				}
 		}
 }
@@ -131,6 +133,22 @@ var btn = document.getElementById("myBtn");
 var span = document.getElementsByClassName("close")[0];
 
 var clear = document.getElementById("clear");
+
+var thick_btn1 = document.getElementById("thickness1");
+var thick_btn2 = document.getElementById("thickness2");
+var thick_btn3 = document.getElementById("thickness3");
+
+thick_btn1.addEventListener("click", () => {
+	thickness = 1
+})
+
+thick_btn2.addEventListener("click", () => {
+	thickness = 3
+})
+
+thick_btn3.addEventListener("click", () => {
+	thickness = 5
+})
 
 //when the user clicks clear button
 clear.addEventListener("click", () => {

@@ -32,6 +32,10 @@
 			<div style="flex: 100%">
 				<canvas id="can" width="600" height="600"></canvas>
 				<div class="container_right" id="tool-selection">
+					<input type="image" id="thickness1" class="thickness" src="{{ url_for('static', filename='dot3.webp') }}" />
+					<input type="image" id="thickness2" class="thickness" src="{{ url_for('static', filename='dot8.png') }}" />
+					<input type="image" id="thickness3" class="thickness" src="{{ url_for('static', filename='dot5.png') }}" />
+
 					<div class="tool-circle" style="background:pink;" id="pink" onclick="color(this)"></div>
 					<div class="tool-circle" style="background:red;" id="red" onclick="color(this)"></div>
 					<div class="tool-circle" style="background:orange;" id="orange" onclick="color(this)"></div>
