@@ -65,8 +65,8 @@ input {
 	border: 1px solid #000000;
 	border-radius: 10px;
 	position: absolute;
-	right: 250px;
-	bottom: 400px;
+	right: 400px;
+	bottom: 450px;
 	width: 170px;
 	height: 200px;
 }
@@ -244,8 +244,12 @@ input {
 
 }
 
-
 .eraser {
 	width: 30px;
 	
+}
+
+.clear {
+	color: black;
+	font-weight: 500;
 }

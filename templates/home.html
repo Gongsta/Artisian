@@ -31,7 +31,7 @@
 			<div style="flex: 100%">
 				<canvas id="can" width="600" height="600"></canvas>
 				<div class="container_right" id="tool-selection">
-					<!-- ******PROBLEM: the position of this changes depending on screen size of the device/display => maybe use relative positioning? -->
+					<div class="tool-circle" style="background:pink;" id="pink" onclick="color(this)"></div>
 					<div class="tool-circle" style="background:red;" id="red" onclick="color(this)"></div>
 					<div class="tool-circle" style="background:orange;" id="orange" onclick="color(this)"></div>
 					<div class="tool-circle" style="background:yellow;" id="yellow" onclick="color(this)"></div>
@@ -40,10 +40,11 @@
 					<div class="tool-circle" style="background: skyblue;" id="skyblue" onclick="color(this)"></div>
 					<div class="tool-circle" style="background:blue;" id="blue" onclick="color(this)"></div>
 					<div class="tool-circle" style="background: purple;" id="purple" onclick="color(this)"></div>
+					<div class="tool-circle" style="background: gray;" id="gray" onclick="color(this)"></div>
 					<div class="tool-circle" style="background:black;" id="black" onclick="color(this)"></div>
 					<!-- TODO 3: Change to Relative path -->
-					<img id="white" style="width: 10%;" class="tool-circle " onclick="color(this)" src="{{ url_for('static', filename='eraser.png') }}">
-					
+					<img id="white" class="tool-circle " onclick="color(this)" src="{{ url_for('static', filename='eraser.png') }}">
+					<p id="clear" class="clear">Clear</p>
 
 				</div>
 				<!-- User Prompt input box -->
