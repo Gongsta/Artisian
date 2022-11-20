@@ -4,7 +4,7 @@
 <head>
 <title>INSERT_NAME</title>
 <!-- TODO 1: CHANGE THIS TO a relative path!!! -->
-<link rel="stylesheet" href="/Users/sungjinhong/Desktop/HackWestern-3/static/styles.css">
+<link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
 <link rel="stylesheet" href="https://rsms.me/inter/inter.css">
 <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">
 <link href="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.css" rel="stylesheet">
@@ -35,7 +35,7 @@
 					<div class="tool-circle" style="background: purple;" id="purple" onclick="color(this)"></div>
 					<div class="tool-circle" style="background:black;" id="black" onclick="color(this)"></div>
 					<!-- TODO 3: Change to Relative path -->
-					<img id="white" style="width: 10%;" class="tool-circle " onclick="color(this)" src="/Users/sungjinhong/Desktop/HackWestern-3/static/eraser.png">
+					<img id="white" style="width: 10%;" class="tool-circle " onclick="color(this)" src="{{ url_for('static', filename='eraser.png') }}">
 					
 
 				</div>
@@ -89,8 +89,7 @@
 	<input type="button" value="clear" id="clr" size="23" onclick="erase()" style="position:absolute;top:55%;left:15%;">
 </body> -->
 
-<!-- TODO 2: CHANGE THIS TO a relative path!!! -->
-<script src="/Users/sungjinhong/Desktop/HackWestern-3/static/main.js"></script>
+<script src="{{ url_for('static', filename='main.js') }}"></script>
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
 
 </html>
