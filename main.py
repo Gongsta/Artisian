@@ -74,4 +74,4 @@ def generate_image_with_prompt(prompt, strength=0.75, guidance_scale=7.5):
     images[0].save("static/generated.png")
 
 if __name__ == "__main__":
-    app.run(host="0.0.0.0", debug=True, port=5002)
+    app.run(host="0.0.0.0", debug=True, port=5003)
